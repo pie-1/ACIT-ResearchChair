@@ -1,3 +1,4 @@
+/*
 Date: 7/4/2026
 Topic learned: React(Conditional rendering)
 
@@ -7,10 +8,11 @@ Summary:
 Resources Used:
          React Docs
          YT-BroCode
+         */
 
-Script:
--------------------------------------------------------------
-    App.jsx:
+//Script:
+//-------------------------------------------------------------
+  //App.jsx:
 import UserGreeting from './UserGreeting.jsx';
 import './index.css'; // or './App.css'
 
@@ -23,9 +25,9 @@ function App() {
 }
 
 export default App;
----------------------------------------------------------------
+//---------------------------------------------------------------
 
-UserGreeting.jsx:
+//UserGreeting.jsx:
 function UserGreeting(props) {
   return (
     props.isLoggedIn
@@ -35,9 +37,9 @@ function UserGreeting(props) {
 }
 
 export default UserGreeting;
-----------------------------------------------------------------
+//----------------------------------------------------------------
 
-index.css:
+//index.css:
 .welcome-message {
   font-size: 2.5em;
   background-color: rgb(97, 46, 180);
@@ -55,4 +57,4 @@ index.css:
   border-radius: 5px;
   margin: 0;
 }
-----------------------------------------------------------------
+//----------------------------------------------------------------
