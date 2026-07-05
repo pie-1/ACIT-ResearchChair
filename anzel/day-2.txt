@@ -1,0 +1,99 @@
+Date: 7/5/2026
+Topic learned: C++(Manipulators and Enums)
+
+Summary:
+    An enum lets you create your own type with a fixed set of named values.
+    Instead of using random numbers like 0, 1, 2, you can use meaningful names.
+
+    Manipulators are special functions used with cout and cin to control formatting.
+
+    Common manipulators:
+                      setw()
+                      setprecision()
+                      setfill()
+
+Resources Used:
+        Class materials
+
+Codes:
+
+--------------------------------------------------------------------------------
+        
+#include<iostream>          // C++ program to demonstrate the use of enum
+using namespace std;
+
+enum Direction
+{
+    North,
+    South,
+    East,   
+    West
+};
+
+int main()
+{
+    Direction dir = North;
+    cout << "Direction: " << dir << endl;
+    return 0;
+}
+
+//------------------------------------------------------------------------------
+
+
+#include <iostream>         // C++ program to demonstrate the use of setw()
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    cout << setw(10) << 10 << endl;
+    cout << setw(10) << 200 << endl;
+    cout << setw(10) << 3000 << endl;
+    return 0;
+}
+
+
+//-----------------------------------------------------------------------------
+
+
+#include <iostream>         // C++ program to demonstrate the use of setprecision()
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    double num = 3.14159265358979323846;
+    cout << setprecision(5) << num << endl; // Output: 3.1416
+    cout << setprecision(10) << num << endl; // Output: 3.141592654
+    return 0;
+}
+
+
+//-----------------------------------------------------------------------------
+
+
+#include <iostream>         // C++ program to demonstrate the use of setfill()
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    cout << setfill('*') << setw(10) << 10 << endl;
+   return 0;
+}
+
+
+//-----------------------------------------------------------------------------
+
+
+#include <iostream>         // C++ program to demonstrate implicit type conversion from int to double
+using namespace std;
+
+int main()
+{
+    int num1 = 10;
+    double num2 = 3.14;
+    double result = num1 + num2; // Implicit type conversion from int to double
+    cout << "Result: " << result << endl; // Output: Result: 13.14
+    return 0;
+}
