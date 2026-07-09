@@ -1,4 +1,4 @@
-# 2026-07-07 — Full Stack Open: Part 0 — Browser Console & Developer Tools
+# 2026-07-07 — Full Stack Open: Browser Console & Developer Tools
 
 **Member:** Kabin Baniya
 **Date:** 2026-07-07
