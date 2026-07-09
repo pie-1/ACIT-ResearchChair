@@ -1,0 +1,112 @@
+Date: 7/8/2026
+Topic learned: C# (Unity UI and GameOver text)
+
+Summary:
+       Today I learned the basics of Unity by creating a Flappy Bird prototype, including Rigidbody2D physics, collision detection, spawning pipes, UI, scene management
+       and debugging common Unity errors.
+    
+    Resources Used:
+    Unity docx
+    Youtube tutorials
+
+    Codes:
+
+    //-----------------------------------------------------------------------------
+
+    BirdScript.cs:
+
+    using UnityEngine;
+
+public class BirdScript : MonoBehaviour
+{
+
+    public Rigidbody2D myRigidbody2D;
+    public float speed;
+    public LogicScript logic;
+    public bool birdisAlive = true;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) == true && birdisAlive == true)
+        {
+          myRigidbody2D.linearVelocity = new Vector2(0, 1)*speed;  
+        }
+        
+    }
+
+   private void OnCollisionEnter2D(Collision2D collision)
+    {
+            logic.GameOver();
+            birdisAlive = false;
+    }
+}
+
+-----------------------------------------------------------------------------------
+
+LogicScript.cs:
+
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class LogicScript : MonoBehaviour
+{
+    public int playerScore;
+    public Text scoreText;
+    public GameObject gameOverScreen;
+   [ContextMenu("Increase Score")]
+    public void addScore(int ScoreToAdd)
+    {
+        playerScore = playerScore + ScoreToAdd;
+        scoreText.text = playerScore.ToString();
+    }
+     public void RestartGame()
+    {
+     SceneManager.LoadScene(SceneManager.GetActiveScene().name);   
+    }
+
+    public void GameOver()
+    {
+        gameOverScreen.SetActive(true);
+    }
+
+}
+
+----------------------------------------------------------------------
+
+PipeMiddleScript:
+
+using UnityEngine;
+
+public class PipeMiddleScript : MonoBehaviour
+{
+    public LogicScript logic;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 3)
+        {
+            int score = 1;
+            logic.addScore(score);
+        }
+        }
+        
+}
+------------------------------------------------------------------------------------
