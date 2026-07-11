@@ -1,0 +1,34 @@
+Date: 7/8/2026
+Topic learned: C# (Unity UI and GameOver text)
+
+Summary:
+       Today I learned the onClick() events for React. onClick is an event handler that runs a function when an element is clicked.
+    
+    Resources Used:
+    React docx
+    Youtube tutorials
+
+    Codes:
+
+    //-----------------------------------------------------------------------------
+
+function Button() {
+    let count = 0;
+
+    const handleClick = (name) => {
+        if (count < 5) {
+            count++;
+            console.log(`${name} you clicked ${count} time/s`);
+        } else {
+            console.log(`${name} you have reached the maximum number of clicks`);
+        }
+    };
+
+    return (
+        <button onClick={() => handleClick("Angel")}>
+            Click Me
+        </button>
+    );
+}
+
+export default Button;
