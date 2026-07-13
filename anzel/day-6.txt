@@ -1,9 +1,8 @@
-Date: 7/8/2026
-Topic learned: C# (Unity UI and GameOver text)
+Date: 7/11/2026
+Topic learned: React (onClick() events)
 
 Summary:
-       Today I learned the onClick() events for React. onClick is an event handler that runs a function when an element is clicked.
-    
+       
     Resources Used:
     React docx
     Youtube tutorials
