@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Anjali",
+    "grade": 11,
+    "stream": "Science (PCM)",
+    "strengths": [
+      "Calculus",
+      "Analytical Writing",
+      "Coding Basics"
+    ],
+    "extracurriculars": [
+      "Debate Club",
+      "Classical Dance",
+      "Chess"
+    ],
+    "role": "Vice-President of the STEM Club"
+  },
+  {
+    "name": "Raymon",
+    "grade": 11,
+    "stream": "Management / Commerce",
+    "strengths": [
+      "Financial Accounting",
+      "Economics",
+      "Marketing"
+    ],
+    "extracurriculars": [
+      "Basketball (Forward)",
+      "Drama Club"
+    ],
+    "role": "Sports Meet Coordinator"
+  },
+  {
+    "name": "Shubham",
+    "grade": 11,
+    "stream": "Computer Science / IT",
+    "strengths": [
+      "Python Programming",
+      "Hardware Systems",
+      "Statistics"
+    ],
+    "extracurriculars": [
+      "Robotics Club",
+      "Gaming",
+      "Quiz Team"
+    ],
+    "role": "Tech Support Volunteer"
+  }
+]
