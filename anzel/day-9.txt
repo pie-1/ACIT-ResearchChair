@@ -1,0 +1,293 @@
+Date: 7/18/2026
+Topic learned: C++ (Function Overloading and Overriding)
+
+Summary:
+        Function overriding is a concept of object-oriented programming which allows a derived class to redefine a function that is already defined in the base class.
+        Function overloading is a concept of OOP which allows the same named function to be called using different methods.
+     
+    Resources Used:
+    Class materials
+
+    Codes:
+
+//--------------------------------------------------------------
+
+//Q1
+/*
+#include<iostream>          //Function Overloading
+using namespace std;
+
+class Area{
+
+    public: double area(int radius){
+        double areaC = 3.14*radius*radius;
+        return areaC;
+    }
+
+    double area(float length){
+
+         double areaS = length*length;
+        return areaS;
+
+    }
+
+    double area(int l, int b){
+
+        double areaR = l*b;
+        return areaR;
+    }
+
+};
+
+int main()
+{
+    Area a;
+    cout<<"Area of a Cirlce:"<<a.area(5)<<endl;
+    cout<<"Area of a Square:"<<a.area(2.5f)<<endl;
+    cout<<"Area of a Cirlce:"<<a.area(10,4)<<endl;
+    return 0;
+}
+*/
+
+//---------------------------------------------------------------
+
+//Q2
+/*
+#include<iostream>              //Function Overloading
+using namespace std;
+
+class Information{
+
+    public:void display(string name){
+        
+        cout<<"Name of the Student:"<<name<<endl;
+         cout<<endl;
+
+    }
+
+    void display(string name, int age){
+
+       cout<<"Name:"<<name<<endl;
+       cout<<"Age:"<<age<<endl;
+       cout<<endl;
+
+    }
+
+    void display(string name, int age, float gpa){
+
+         cout<<"Name:"<<name<<endl;
+       cout<<"Age:"<<age<<endl;
+       cout<<"GPA:"<<gpa<<endl;
+    }
+
+};
+
+int main()
+{
+    Information i;
+    i.display("Angel");
+    i.display("Angel",19);
+    i.display("Angel",19,3.6);
+   
+    return 0;
+}
+*/
+
+//-------------------------------------------------------------
+
+//Q3
+/*
+#include<iostream>                      //Function Overloading
+using namespace std;
+
+class Sum{
+
+    public: double add(int x, int y){
+        double add1 = x+y;
+        return add1;
+    }
+
+    double add(int x, int y, int z){
+
+         double add2 = x+y+z;
+        return add2;
+
+    }
+
+    double add(float a, float b){
+
+        double add3 = a+b;
+        return add3;
+    }
+
+};
+
+int main()
+{
+    Sum s;
+    cout<<"Sum1:"<<s.add(5,5)<<endl;
+    cout<<"Sum2:"<<s.add(4,7,3)<<endl;
+    cout<<"Sum3:"<<s.add(5.6f,3.4f)<<endl;
+    return 0;
+}
+*/
+
+//---------------------------------------------------------------
+//Q4
+/*
+#include <iostream>                 //Overload Operator
+using namespace std;
+
+class Distance
+{
+    int feet, inch;
+
+public:
+    Distance(int f = 0, int i = 0)
+    {
+        feet = f;
+        inch = i;
+    }
+
+    Distance operator+(Distance d)
+    {
+        Distance temp;
+        temp.feet = feet + d.feet;
+        temp.inch = inch + d.inch;
+
+        if (temp.inch >= 12)
+        {
+            temp.feet++;
+            temp.inch -= 12;
+        }
+
+        return temp;
+    }
+
+    void display()
+    {
+        cout << feet << " feet " << inch << " inch";
+    }
+};
+
+int main()
+{
+    Distance d1(3, 8), d2(2, 7), d3;
+
+    d3 = d1 + d2;
+
+    cout << "Total Distance = ";
+    d3.display();
+
+    return 0;
+}
+*/
+
+//---------------------------------------------------------------
+
+//Q6
+/*
+#include<iostream>                          //Function Overriding
+using namespace std;
+
+class Shape
+{
+
+    public : virtual void area()
+    {
+        cout<<"Base class area:"<<endl;
+    }
+
+};
+
+class Rectangle : public Shape
+{
+    public: void area(){
+        int length = 10;
+        int breadth = 20;
+        cout<<"Area of a rectangle is:"<<length*breadth<<endl;
+    } 
+};
+
+class Circle : public Shape
+{
+     public: void area(){
+        int radius = 4;
+        cout<<"Area of a Circle is:"<<3.14*radius*radius<<endl;
+    } 
+};
+
+class Triangle : public Shape
+{
+     public: void area(){
+        int base = 4;
+        int height = 5;
+        cout<<"Area of a Triangle is:"<<0.5*base*height<<endl;
+    } 
+};
+
+int main()
+{
+    Shape *s;
+    Rectangle r;
+    s=&r;
+    (*s).area();
+
+    Circle c;
+    s=&c;
+    (*s).area();
+
+    Triangle t;
+    s=&t;
+    (*s).area();
+
+    return 0;
+}
+*/
+
+//----------------------------------------------------------------
+
+//Q7
+
+#include<iostream>                  //function Overriding
+using namespace std;
+
+class Employee
+{
+
+    public : virtual void salary()
+    {
+        cout<<"Base class Salary:"<<endl;
+    }
+
+};
+
+class FullTimeEmployee : public Employee
+{
+    public: void salary()
+    {
+        cout<<"Your salary is : Rs50,000"<<endl;
+    } 
+};
+
+class PartTimeEmployee: public Employee
+{
+     public: void salary(){
+        cout<<"Your salary is : Rs30,000"<<endl;
+    } 
+};
+
+
+int main()
+{
+    Employee *e;
+    FullTimeEmployee f;
+    e=&f;
+    (*e).salary();
+
+    PartTimeEmployee p;
+    e=&p;
+    (*e).salary();
+
+    return 0;
+}
