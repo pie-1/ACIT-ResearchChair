@@ -1,1 +1,1 @@
-Welcome to the Pandas phase of my Machine Learning journey! After mastering the matrix mechanics of NumPy, this folder is dedicated to learning **Pandas**—the industry-standard library for data manipulation, cleaning, and analysis in Python.
+This folder is dedicated to learning **Pandas**—the industry-standard library for data manipulation, cleaning, and analysis in Python. This folder contains notebook of various topics in pandas just like numpy folder which contains numpy topics like array.
